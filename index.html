@@ -65,12 +65,12 @@ function moleculeMass(input) {
        //if the uppercase is followed by a number, it is its subscript
        case 0:
        far = 1
-       while(checkCase(input.substr(far + pos,1) == 0 && (input.length !== pos + far + 1))){
-         far += 1
+       while((checkCase(input.substr(far + pos,1)) == 0) && (input.length !== pos + far + 1)){
+         far = far + 1
        }
        element = input.substr(pos,1)
-       subscript = input.substr(pos+1,far)
-       pos = pos + far + 1
+       subscript = input.substr(pos + 1,far-1)
+       pos = pos + far
        break;
 
        //if the uppercase is followed by another uppercase, the subscript is 1
